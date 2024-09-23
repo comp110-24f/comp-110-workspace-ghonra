@@ -3,11 +3,17 @@
 
 def less_than_10(num: int) -> None:
     "tell us if num <10"
+    dub: int = num * 2
+    dub = dub - 1
+    print(dub)
     if num < 10:  # check if this is true
         print("small number!")  # then" block
     else:
         print("big number")
-    print("this is the end of the function")
+    print("have a nice day!")
+
+
+less_than_10(num=7)
 
 
 def wake_up(alarm: bool) -> str:
@@ -33,3 +39,18 @@ def check_first_letter(word: str, letter: str) -> str:
 
 
 print(check_first_letter(word="happy", letter="h"))
+
+
+def number_info(num: int) -> int:
+    if num < 10:
+        print("small number.")
+    else:
+        if num % 2 == 0:
+            print("even number")
+        else:
+            print("odd number")
+    return num
+
+
+number_info(num=11)
+print(number_info(num=4))
