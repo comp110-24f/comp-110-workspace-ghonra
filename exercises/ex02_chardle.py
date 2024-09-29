@@ -3,18 +3,21 @@
 __author__ = "730649788"
 
 
-def input_word() -> str:
-    word: str = input("Enter a 5 character word: ")
+def input_word() -> str:  # defines the function to get the players word
+    word: str = input(" Enter a 5-character word: ")
     if (
         len(word) == 5
-    ):  # if the length of the word is 5 characters long, it will print the word, if not it will show an error statement
+    ):  # if the length of the word is 5 characters long, it will print the word,
+        # if not it will show an error statement
         return word
     else:
         print(str("Error: Word must contain 5 characters."))
         exit()  # exits program if the word does not meet the needed conditions
 
 
-def input_letter() -> str:
+def input_letter() -> (
+    str
+):  # defines function to get a single character in the given word
     letter: str = input("Enter a single character: ")
     if (
         len(letter) == 1
@@ -22,16 +25,21 @@ def input_letter() -> str:
         return letter
     else:
         print(str("Error: Character must be a single character."))
-        exit()  # even if the inputted word has 5 characters and more than one character is inputted, then it will exit the function
+        exit()  # even if the inputted word has 5 characters but more than one character
+        # is inputted,then it will exit the function
 
 
-def contains_char(word: str, letter: str) -> None:
+def contains_char(
+    word: str, letter: str
+) -> None:  # defines function that combs through the given word looking for the given,
+    # single character and outputting how many instances there are of that
+    # character in the word
     print(str("Searching for " + str(letter) + " in " + str(word)))
     count: int = 0  # local variable to help keep track of the matches found
     # checks each index for where it may be the same as the inputted letter
     if word[0] == letter:
         print(str(letter + " found at index 0"))
-        count += 1
+        count += 1  # shorthand for count = count + 1
     if word[1] == letter:
         print(str(letter + " found at index 1"))
         count += 1
@@ -46,11 +54,15 @@ def contains_char(word: str, letter: str) -> None:
         count += 1
 
     if count == 0:
-        print("No instance of " + str(letter) + " found in " + str(word))
+        print("No instances of " + str(letter) + " found in " + str(word))
+    elif count == 1:  # have to do a different statment because 1 is singular
+        # but everything else is plural
+        print("1 instance of " + str(letter) + " found in " + str(word))
     else:
         print(
-            str(count) + " instance of " + str(letter) + " found in " + str(word)
-        )  # takes the count of how many instances of a letter there are is in a word and inputs it into the printed string
+            str(count) + " instances of " + str(letter) + " found in " + str(word)
+        )  # takes the count of how many instances of a letter there are is in a word
+        # and inputs it into the printed string
 
 
 def main() -> None:  # main function to help put it all together
@@ -60,4 +72,4 @@ def main() -> None:  # main function to help put it all together
 
 
 if __name__ == "__main__":
-    main()
+    main()  # calls main function
