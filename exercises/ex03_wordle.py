@@ -4,7 +4,7 @@ __author__ = "730649788"
 
 
 def input_guess(expected_length: int) -> str:
-    guess = input(
+    guess: str = input(
         f"Enter a {expected_length} character word: "
     )  # local variable that is initial prompt to user
     while True:
@@ -41,7 +41,7 @@ def emojified(user_word: str, secret_word: str) -> str:
     WHITE_BOX: str = "\U00002B1C"  # emoji definition using binary stuff
     GREEN_BOX: str = "\U0001F7E9"
     YELLOW_BOX: str = "\U0001F7E8"
-    emoji_result: str = " "  # setting up empty string to copy values over
+    emoji_result: str = ""  # setting up empty string to copy values over
     index: int = 0
     while index < len(user_word):
         if (
@@ -60,7 +60,7 @@ def emojified(user_word: str, secret_word: str) -> str:
     return emoji_result  # returns the emoji for each char of a word
 
 
-def main(classified_word: str) -> None:  # main funciton of program, ties all together
+def main(classified_word: str) -> None:  # main function of program, ties all together
     """the entrypoint of the program and game loop"""
     max_turns: int = 6  # local variable stating how many turns a user has
     current_turn: int = 1  # local variable stating the starting turn of user
@@ -78,7 +78,7 @@ def main(classified_word: str) -> None:  # main funciton of program, ties all to
         print(emoji_result)  # prints these emojis
         if guess == classified_word:  # if user gets it right
             print(
-                f"You won in {current_turn} turns!"
+                f"You won in {current_turn}/6 turns!"
             )  # print the win statment with how many turns it took
             game_won = True  # game_won turns into a true statment, stopping the loop
         else:
