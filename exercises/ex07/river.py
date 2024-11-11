@@ -7,6 +7,7 @@ from ex07.bear import Bear
 
 
 class River:
+
     day: int
     fish: list[Fish]
     bears: list[Bear]
